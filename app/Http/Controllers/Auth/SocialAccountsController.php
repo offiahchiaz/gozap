@@ -21,7 +21,7 @@ class SocialAccountsController extends Controller
     public function handleProviderCallback($provider)
     {
         try {
-            $user = Socialiate::driver($provider)->user();
+            $user = Socialite::driver($provider)->user();
         } catch (Exception $e) {
             Session::flash('Something went wrong');
             return redirect('/login');
